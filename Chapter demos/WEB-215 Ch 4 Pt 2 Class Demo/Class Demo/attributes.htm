@@ -1,0 +1,29 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+	$('document').ready(function() {
+        $('img').attr({
+            'src': 'images/spring.jpg',
+            'title': 'New Spring photo'});
+        $('a').attr({
+            'href': 'images/spring.jpg',
+            'target': '_blank'});
+        $('a').removeAttr('href')
+	});
+	</script>
+	<style type="text/css">
+	img {
+		margin: 20px;
+		width: 400px;
+		height: 400px;
+		}
+	</style>
+</head>
+<body>
+	<a href="images/grass.jpg"><img src="images/grass.jpg" alt="image" /></a>
+</body>
+</html>

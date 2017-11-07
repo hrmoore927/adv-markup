@@ -1,0 +1,24 @@
+#photoShow {
+	border: 3px double #333;
+	padding: 10px;
+	background: #ccc;
+}
+
+#photoShow img {
+	border: 1px solid #333;
+    position:absolute;
+    z-index: 0;
+}
+
+#photoShow img.previous {
+    z-index: 1;
+}
+
+#photoShow img.current {
+    z-index: 2;
+}
+
+h1~h2 {
+	margin-top: -1em;
+	font-style: italic;
+	}

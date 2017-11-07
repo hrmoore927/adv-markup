@@ -1,0 +1,124 @@
+body {
+	background: #f75f31; /* Old browsers */
+	background: -moz-linear-gradient(left,  #f75f31 0%, #f9ac2f 16%, #f6f92f 33%, #27f73c 49%, #2eaaf7 66%, #542ff9 82%, #b885f7 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f75f31), color-stop(16%,#f9ac2f), color-stop(33%,#f6f92f), color-stop(49%,#27f73c), color-stop(66%,#2eaaf7), color-stop(82%,#542ff9), color-stop(100%,#b885f7)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #f75f31 0%,#f9ac2f 16%,#f6f92f 33%,#27f73c 49%,#2eaaf7 66%,#542ff9 82%,#b885f7 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #f75f31 0%,#f9ac2f 16%,#f6f92f 33%,#27f73c 49%,#2eaaf7 66%,#542ff9 82%,#b885f7 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #f75f31 0%,#f9ac2f 16%,#f6f92f 33%,#27f73c 49%,#2eaaf7 66%,#542ff9 82%,#b885f7 100%); /* IE10+ */
+	background: linear-gradient(to right,  #f75f31 0%,#f9ac2f 16%,#f6f92f 33%,#27f73c 49%,#2eaaf7 66%,#542ff9 82%,#b885f7 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f75f31', endColorstr='#b885f7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+#choices {
+	list-style: none;
+	margin: 0 0 20px;
+	padding: 0;
+}
+
+#choices li {
+	display: inline;
+}
+
+#colorSample {
+	float: left;
+	background: #fff;
+	padding: 1px;
+	border: 1px solid #333;
+	margin: 0 10px 10px 0;
+}
+
+#choices a {
+	color: #333;
+}
+
+#choices a:hover {
+	color: #F00;
+}
+
+/* body color classes */
+body.black {
+	background: #000;
+	color: #fff;
+}
+
+body.black #choices a {
+	color: #fff;
+}
+
+body.black #choices a:hover {
+	color: #ff0;
+}
+
+body.blue {
+	background: #00f;
+	color: #fff;
+}
+
+body.blue #choices a {
+	color: #fff;
+}
+
+body.blue #choices a:hover {
+	color: #ff0;
+}
+
+body.brown {
+	background: #630;
+	color: #fff;
+}
+
+body.brown #choices a {
+	color: #fff;
+}
+
+body.brown #choices a:hover {
+	color: #ff0;
+}
+
+body.green {
+	background: #0f0;
+}
+
+body.orange {
+	background: #f90;
+}
+
+body.pink {
+	background: #fcc;
+}
+
+body.purple {
+	background: #639;
+	color: #fff;
+}
+
+body.purple #choices a {
+	color: #fff;
+}
+
+body.purple #choices a:hover {
+	color: #ff0;
+}
+
+body.red {
+	background: #f00;
+}
+
+body.red #choices a:hover {
+	color: #fff;
+}
+
+body.white {
+	background: #fff;
+}
+
+body.yellow {
+	background: #ff0;
+}
+
+/* to highlight current link */
+.selectedColor {
+	font-weight: bold;
+	font-size: 125%;
+}

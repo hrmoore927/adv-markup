@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Showing and Hiding an Element</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			$("#show").click(function() {
+				$("#theDiv").show("normal");
+			});
+			$("#hide").click(function() {
+				$("#theDiv").hide("normal");
+			});
+			$("#toggle").click(function() {
+				$("#theDiv").toggle("slow");
+			});
+		});
+	</script>
+	<style>
+		div#theDiv {
+			width: 250px;
+			height: 180px;
+			margin: 10px;
+			padding: 20px;
+			background: #00f;
+			border: 2px solid #000;
+			cursor: pointer;
+			}
+			
+		p, span {
+			font-size: 18px;
+			}
+			
+		button {
+			margin: 5px;
+			}
+	</style>
+</head>
+<body>
+	<p>Showing and Hiding an Element</p>
+	<div id="theDiv"></div>
+	<button id="show">Show</button>
+	<button id="hide">Hide</button>
+	<button id="toggle">Toggle</button>
+</body>
+</html>

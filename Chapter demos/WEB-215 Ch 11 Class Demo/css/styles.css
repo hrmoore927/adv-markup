@@ -1,0 +1,107 @@
+/****************************
+ general 
+ ***************************/
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: url(../images/vhlogo.jpg);
+	margin: 0;
+}
+
+#wrapper {
+	background-color: rgba(255, 255, 255, .95);
+	box-shadow: 0 0 15px #000;
+	margin: 0 auto;
+	padding: 20px;
+	width: 90%;
+}
+
+h1 {
+	border-bottom: 1px dashed #333;
+	margin-top: 0;
+}
+
+/****************************
+drag-n-drop timeline
+ ***************************/
+#timeline div {
+	background-color: #fff;
+	border: 1px solid #000;
+	display: inline-block;
+	height: 260px;
+	margin: 20px;
+	width: 220px;
+}
+
+#timeline h2 {
+	background-color: #333;
+	color: #fff;
+	margin: 0;
+	padding: 5px;
+	text-align: center;
+}
+
+#timeline-singers {
+	border-bottom: 1px dashed #333;
+	padding-bottom: 20px;
+}
+
+#timeline-singers figure {
+	display: inline-block;
+	height: 180px;
+	margin: 5px;
+	position: relative;
+	width: 180px;
+}
+
+#timeline-singers img {
+	border: 1px solid #333;
+	border-radius: 10px;	
+	box-shadow: 0 0 5px #333;
+}
+
+#timeline-singers figcaption {
+	background-color: rgba(0, 0, 0, .8);
+	border-radius: 0 0 10px 10px;	
+	bottom: -2px;
+	color: #fff;
+	padding: 5px;
+	position: absolute;
+	width: 182px;
+}
+
+.dropZone {
+	border: 1px dashed #600 !important;
+}
+
+.dropZone h2 {
+	background-color: #fff !important;
+	color: #333 !important;
+}
+
+.dropHover {
+	background: #555 !important;
+	box-shadow: 0 0 15px 15px #ff0;
+}
+
+/****************************
+sortable list
+***************************/
+#singers-sorted li {
+	box-shadow: 0 0 5px #333;
+	height: 100px;
+	list-style-position: inside;
+	margin: 40px 0;
+	vertical-align: top;
+	width: 170px;
+}
+
+.singer-placeholder {
+	border: 1px dashed #060;
+}
+
+#result {
+	font-weight: bold;
+}

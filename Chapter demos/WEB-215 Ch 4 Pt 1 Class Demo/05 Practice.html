@@ -1,0 +1,263 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" >
+	<title>jQuery Selectors and Filters Practice</title>
+	<style type="text/css">
+	<!--
+	body {
+		font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		margin-bottom: 400px;
+	}
+	#nav {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	#nav li {
+		display: inline;
+		border-right: 2px solid #000;
+		margin: 0;
+		padding: 0 8px 0 4px;
+	}
+	#nav a {
+		text-decoration: none;
+		border: 1px solid #000;
+		padding: 2px 4px;
+		background: #666;
+		color: #fff;
+		font-size: 90%;
+		font-weight: bold;
+	}
+	h2 {
+		margin-bottom: 0px;
+	}
+	td , th{
+		vertical-align: top;
+		padding: 2px;
+	}
+	a {
+		color: #009;
+	}
+	a:hover {
+		color: #903;
+	}
+	-->
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+        $(document).ready(function(){
+            $('#nav li:last').css('border-right', 'none');
+            $('ol, h2+p').css('margin-top', '0');
+            $('tr:even').css('background-color', '#999');
+            $('tr:odd').css('background-color', '#ccc');
+//            6n means every 6th one, +1 means start at the first one
+            $('tr:nth-child(6n+1)').css({'background-color': '#000', 'color': '#fff'});
+            $('a[href*=http]').after('&nbsp;<img src=images/external.gif>');
+            $('p:not(:first)').after('<a href="#top" title="Back to Top">Back to Top</a>');
+        })
+    </script>
+</head>
+
+<body>
+	<h1 id="top">jQuery Selectors and Filters</h1>
+	<ul id="nav">
+		<li><a href="#jquery">jQuery</a></li>
+		<li><a href="#dojo">Dojo</a></li>
+		<li><a href="#prototype">Prototype</a></li>
+		<li><a href="#scriptaculous">Script.aculo.us</a></li>
+		<li><a href="#yui">YUI</a></li>
+		<li><a href="#mootools">MooTools</a></li>
+		<li><a href="#compare">Comparison</a></li>
+	</ul>
+	
+	<h2>To Do:</h2>
+	<ol>
+		<li>Remove the right border from the last navbar list item</li>
+		<li>Remove the top margin on the OL following the H2 (this OL)</li>
+		<li>Remove the top margin from the first paragraph after the H2</li>
+		<li>Stripe the table
+			<ol>
+				<li>Every row should alternate color from #999 to #ccc</li>
+				<li>Every row that contains the framework names needs a black background and white text</li>
+			</ol>
+		</li>
+		<li>Display the images/external.gif image after every external hyperlink (you may want to add a non-breaking space before the image)</li>
+		<li>Create "back to top" links after each framework paragraph</li>
+		<li>Including the opening "document ready" statement and the closing brace, you can complete this with 10 lines of code</li>
+	</ol>
+	
+	<div id="frameworks">
+		<h2>JavaScript Frameworks</h2>
+		<p>jQuery isn't the only JavaScript framework out there. There are many others that provide similar functionality and functionality to that of jQuery. Other popular frameworks include Dojo, Prototype, Script.aculo.us, the Yahoo! UI, and MooTools. There are even more, but them's the biggies. A comparison of several JavaScript frameworks is available at http://en.wikipedia.org/wiki/Comparison_of_JavaScript_frameworks.</p>
+		<p id="jquery"><a href="http://jquery.com/">jQuery</a> is a cross-browser JavaScript library designed to simplify the client-side scripting of HTML. It was released in January 2006 at BarCamp NYC by John Resig. Used by over 31% of the 10,000 most visited websites, jQuery is the most popular JavaScript library in use today.</p>
+		<p id="dojo"><a href="http://www.dojotoolkit.org/">Dojo Toolkit</a> is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites. It was started by Alex Russell, Dylan Schiemann, David Schontzler, and others in 2004 and is dual-licensed under the BSD License and the Academic Free License. The Dojo Foundation is a non-profit organization designed to promote the adoption of the toolkit.</p>
+		<p id="prototype">The <a href="http://www.prototypejs.org/">Prototype JavaScript Framework</a> is a JavaScript framework created by Sam Stephenson in February of 2005 as part of the foundation for Ajax support in Ruby on Rails. It is implemented as a single file of JavaScript code, usually named prototype.js. Prototype is distributed standalone, but also as part of larger projects, such as Ruby on Rails, script.aculo.us and Rico.</p>
+		<p id="scriptaculous"><a href="http://script.aculo.us/">script.aculo.us</a> is a JavaScript library built on the Prototype JavaScript Framework, providing dynamic visual effects and user interface elements via the Document Object Model (DOM). It is most notably included with Ruby on Rails and Seaside, but also provided separately to work with other web application frameworks and scripting languages.</p>
+		<p id="yui">The <a href="http://developer.yahoo.com/yui/">Yahoo! User Interface Library (YUI)</a> is an open-source JavaScript library for building richly interactive web applications using techniques such as Ajax, DHTML and DOM scripting. YUI includes several core CSS resources. It is available under a BSD License. Development on YUI began in 2005 and Yahoo! properties such as My Yahoo! and the Yahoo! front page began using YUI in the summer of that year. YUI was released for public use in February 2006. It is actively developed by a core team of Yahoo! engineers.</p>
+		<p id="mootools"><a href="http://mootools.net/">MooTools</a> (My Object-Oriented Tools) is a lightweight, object-oriented, web-application framework for JavaScript, written in JavaScript. It is released under the free, open-source MIT License.</p>
+		
+		<table id="compare">
+			<tr>
+				<th></th>
+				<th>Dojo</th>
+				<th>jQuery</th>
+				<th>MooTools</th>
+				<th>Prototype &amp; script. aculo.us</th>
+				<th>YUI</th>
+			</tr>
+			<tr>
+				<th>Version compared</th>
+				<td>1.5.0<br>
+				15 Jul 2010</td>
+				<td>1.4.2<br>
+				13 Feb 2010</td>
+				<td>1.2.4<br>
+				19 Oct 2009</td>
+				<td>1.6.1/1.8.3<br>
+				14 Nov 2009</td>
+				<td>3.0<br>
+				29 Sep 2009</td>
+			</tr>
+			<tr>
+				<th>Size</th>
+				<td>Variable.<br>
+				Base size:<br>
+				28 kB (minified &amp; gzipped),<br>
+				65 kB (minified),<br>
+				123 kB (uncompressed)</td>
+				<td>24 KiB (minified &amp; gzipped),<br>
+				72 KiB (minified),<br>
+				155 KiB (uncompressed)</td>
+				<td>Variable;<br>
+				7.3–65 KiB (YUI Compressor),<br>
+				101 KiB (uncompressed)</td>
+				<td>46–278 kB</td>
+				<td>Variable; library core is 31 kB</td>
+			</tr>
+			<tr>
+				<th>License</th>
+				<td>BSD &amp; AFL</td>
+				<td>MIT &amp; GPL</td>
+				<td>MIT</td>
+				<td>MIT</td>
+				<td>BSD</td>
+			</tr>
+			<tr>
+				<th>Drag and drop</th>
+				<td>Yes</td>
+				<td>Yes</td>
+				<td>Yes</td>
+				<td>Yes</td>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<th>Simple visual effects</th>
+				<td>Yes</td>
+				<td>Yes</td>
+				<td>Yes</td>
+				<td>Yes</td>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<th></th>
+				<th>Dojo</th>
+				<th>jQuery</th>
+				<th>MooTools</th>
+				<th>Prototype &amp; script. aculo.us</th>
+				<th>YUI</th>
+			</tr>
+			<tr>
+				<th>Animation /<br>
+				advanced visual effects</th>
+				<td>Yes</td>
+				<td>Yes</td>
+				<td>Yes</td>
+				<td>Yes</td>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<th>Event handling</th>
+				<td>Yes</td>
+				<td>Yes</td>
+				<td>Yes</td>
+				<td>Yes</td>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<th>Back button support /<br>
+				history management</th>
+				<td>Yes</td>
+				<td>With plugins</td>
+				<td>With plugin</td>
+				<td>Yes</td>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<th>Input form widgets &amp; validation</th>
+				<td>Yes</td>
+				<td>With plugins</td>
+				<td>Yes</td>
+				<td>Yes</td>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<th>Rich text editor</th>
+				<td>Yes</td>
+				<td>With plugins</td>
+				<td>Yes</td>
+				<td></td>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<th></th>
+				<th>Dojo</th>
+				<th>jQuery</th>
+				<th>MooTools</th>
+				<th>Prototype &amp; script.aculo.us</th>
+				<th>YUI</th>
+			</tr>
+			<tr>
+				<th>Internet Explorer</th>
+				<td>6+</td>
+				<td>6+</td>
+				<td>6+</td>
+				<td>6+</td>
+				<td>6+</td>
+			</tr>
+			<tr>
+				<th>Mozilla Firefox</th>
+				<td>3+</td>
+				<td>2+</td>
+				<td>1.5+</td>
+				<td>1.5+</td>
+				<td>3+</td>
+			</tr>
+			<tr>
+				<th>Safari</th>
+				<td>4</td>
+				<td>3+</td>
+				<td>2+</td>
+				<td>2.0.4+</td>
+				<td>4.0</td>
+			</tr>
+			<tr>
+				<th>Opera</th>
+				<td>10</td>
+				<td>9+</td>
+				<td>9+</td>
+				<td>9.25+</td>
+				<td>10.0+</td>
+			</tr>
+			<tr>
+				<th>Chrome</th>
+				<td>3</td>
+				<td>1+</td>
+				<td>1+</td>
+				<td>1+ (starting with 1.6.1RC3)</td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

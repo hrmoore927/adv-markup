@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Striping/Hover Highlighting a Table</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script src="table.js"></script>
+	<style>
+		a {
+			color: #000;
+			}
+
+		th,td {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			}
+
+		tr {
+			border: 1px solid #ccc;
+			font-size: 18px;
+			}
+
+		td {
+			width:200px;
+			padding:3px;
+			}
+
+		th {
+			background-color:#D2E0E8;
+			color:#003366
+			}
+
+		table {
+			border: 1px solid #ccc;
+			}
+
+		.rowEven {
+			background-color: #1cc;
+			}
+
+		.rowOdd {
+			background-color: #cc1;
+			}
+
+		.highlighted {
+			background-color: #c11; 
+			cursor: pointer;
+			}
+
+		.disabled {
+			background-color: #ccc; 
+			}
+	</style>
+</head>
+<body>
+	<h1>Using jQuery to stripe, hover-highlight, and add other behaviors to a table</h1>
+
+	<ul>
+		<li>Rules:
+			<ul>
+				<li>Make use of the existing classes rather than using the <code>css()</code> method.</li>
+				<li>Set up the event listeners in <code>document.ready</code> and have them call functions.</li>
+				<li>Do not use any anonymous functions.</li>
+			</ul>
+		</li>
+		<li>To do:
+			<ul>
+				<li>Stripe the table (starting at Row 2) with alternating #1CC and #CC1.</li>
+				<li>Change color on hover to #C11, returning to original color on mouseout.</li>
+				<li>When clicked, row should have background of #CCC.
+					<ul>
+						<li>When clicked again, original coloring is reapplied.</li>
+					</ul>
+				</li>
+				<li>Prevent links from going to other page when clicked.</li>
+				<li>When a link is clicked, display an alert reading <strong>You clicked the <em>xxxx</em> link</strong> where <em>xxxx</em> is the actual food they clicked.</li>
+				<li>Add a dollar sign before every monetary value.</li>
+			</ul>
+		</li>
+	</ul>
+
+	<table id="theList">
+		<thead>
+			<tr>
+			  <th>Item</th>
+			  <th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			  <td><a href="http://en.wikipedia.org/wiki/Milk">Milk</a></td>
+			  <td>1.99</td>
+			</tr>
+			<tr>
+			  <td><a href="http://en.wikipedia.org/wiki/Eggs">Eggs</a></td>
+			  <td>2.29</td>
+			</tr>
+			<tr>
+			  <td><a href="http://en.wikipedia.org/wiki/Butter">Butter</a></td>
+			  <td>3.49</td>
+			</tr>
+			<tr>
+			  <td><a href="http://en.wikipedia.org/wiki/Bread">Bread</a></td>
+			  <td>0.99</td>
+			</tr>
+			<tr>
+			  <td><a href="http://en.wikipedia.org/wiki/Pasta">Pasta</a></td>
+			  <td>1.19</td>
+			</tr>
+			<tr>
+			  <td><a href="http://en.wikipedia.org/wiki/Honey">Honey</a></td>
+			  <td>4.39</td>
+			</tr>
+			<tr>
+			  <td><a href="http://en.wikipedia.org/wiki/Cookies">Cookies</a></td>
+			  <td>2.99</td>
+			</tr>
+			<tr>
+			  <td><a href="http://en.wikipedia.org/wiki/Apples">Apples</a></td>
+			  <td>0.59</td>
+			</tr>
+			<tr>
+			  <td><a href="http://en.wikipedia.org/wiki/Sugar">Sugar</a></td>
+			  <td>1.78</td>
+			</tr>
+			<tr>
+			  <td><a href="http://en.wikipedia.org/wiki/Pepper">Pepper</a></td>
+			  <td>1.56</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

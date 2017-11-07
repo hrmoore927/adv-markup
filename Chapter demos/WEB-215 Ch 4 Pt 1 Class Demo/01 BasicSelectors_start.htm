@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$('document').ready(function(){
+            $('p').css('border', '1px solid red');
+            $('#list1').css('border', '1px solid red');
+            $('#list1').css('background', '#ff0');
+            $('li.main').css('border', '5px solid #0f0');
+            $('h2').css('margin-bottom', '0');
+            $('p:first-of-type').css('margin-top', '0');
+            $('.sub').css({'font-size': '24px', 'color': '#f00'});
+        });
+	</script>
+	<style type="text/css">
+	.main {
+		color: #000080;
+		}
+	.sub {
+		color: #800000;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="main">item 1, class main</li>
+		<li class="main">item 2, class main</li>
+		<li class="sub">item 3, class sub</li>
+		<li class="sub">item 4, class sub</li>
+	</ul>
+
+	<div>
+		<h2>This is a heading 2</h2>
+		<p class="main">This is paragraph 1, <strong>class main</strong></p>
+		<p>This is paragraph 2, <strong>no class</strong></p>
+		<p class="sub">This is paragraph 3, <strong>class sub</strong></p>
+		<p>This is paragraph 4, <strong>no class</strong></p>
+		<strong>This is bold text, but not a paragraph</strong>
+	</div>
+
+	<p class="main sub">This paragraph is OUTSIDE the DIV</p>
+</body>
+</html>

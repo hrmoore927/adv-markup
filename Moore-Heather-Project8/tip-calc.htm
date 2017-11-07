@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Forms</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/calculate.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Simple Tip Calculator</h1>
+        <h2>This calculator will calculate a tip.</h2>
+        <h3>
+            Questions? Contact us at <span class="bobEmail">You must have JavaScript enabled to view email address</span> or <span class="bobbieEmail">You must have JavaScript enabled to view email address</span>
+        </h3>
+        <form id="tipCalc" name="tipCalc" method="get" action="">
+            <label for="name">Name:</label><input type="text" name="name" id="name"><br>
+
+            <label for="gender_m">Gender: Male</label><input type="radio" name="gender" value="masculine" id="gender_m"><label for="gender_f">Female</label><input type="radio" name="gender" value="feminine" id="gender_f"><br>
+
+            <label for="total">Total bill:</label><input type="text" name="total" id="total"><br>
+
+            <label for="percent">Tip percent:</label><input type="text" name="percent" id="percent" value="15"><br>
+
+            <input type="checkbox" name="round" id="round"><label for="round">Round off final answer?</label><br>
+
+            <label for="roundTo_dollar">Nearest dollar</label><input type="radio" name="roundTo" value="int" id="roundTo_dollar"><br>
+            <label for="roundTo_ten">Nearest dime</label><input type="radio" name="roundTo" value="ten" id="roundTo_ten"><br>
+            <label for="roundTo_penny">Nearest cent</label><input type="radio" name="roundTo" value="hun" id="roundTo_penny"><br>
+
+            <input type="submit" name="submit" id="submit" value="Calculate">
+        </form>
+        <h3 id="totalBill">Total bill:</h3>
+        <h3 id="totalTip">Tip:</h3>
+    </div>
+</body>
+
+</html>

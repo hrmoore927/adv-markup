@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/concert.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Order Form</h1>
+        <hr>
+    </header>
+    <main>
+        <form action="" method="">
+            <label for="date">Concert Date:</label>
+            <input type="text" name="date" id="date"><br>
+
+            <div id="shirtSelect">
+                <label for="shirt">Choose your free shirt design</label>
+                <select name="shirt" id="shirt">
+                    <option value="">Select one...</option>
+                    <option value="">The Cars</option>
+                    <option value="">Duran Duran</option>
+                    <option value="">Flock of Seagulls</option>
+                    <option value="">Missing Persons</option>
+                </select><br>
+            </div><br>
+            
+            Which band should be the headliner?<br>
+            <div class="radio">
+                <label for="cars">The Cars</label>
+                <input type="radio" name="headliner" value="The Cars" id="cars">
+                <label for="duran">Duran Duran</label>
+                <input type="radio" name="headliner" value="Duran Duran" id="duran">
+                <label for="flock">Flock of Seagulls</label>
+                <input type="radio" name="headliner" value="Flock of Seagulls" id="flock">
+                <label for="missing">Missing Persons</label>
+                <input type="radio" name="headliner" value="Missing Persons" id="missing">
+            </div><br> In which decade were you born?<br>
+            <div class="radio">
+                <label for="sixties">1960s or before</label>
+                <input type="radio" name="decade" value="1960" id="sixties">
+                <label for="seventies">1970s</label>
+                <input type="radio" name="decade" value="1970" id="seventies">
+                <label for="eighties">1980s</label>
+                <input type="radio" name="decade" value="1980" id="eighties">
+                <label for="ninties">1990s or later</label>
+                <input type="radio" name="decade" value="1990" id="ninties">
+            </div><br>
+
+            <label for="addBand">What is one more band we should add to our lineup?</label>
+            <input type="text" name="addBand" id="addBand"><br> Which of the following add-ons would you like?<br>
+            <div id="checkbox">
+                <label for="audio">USB of concert audio ($5)</label>
+                <input type="checkbox" name="audio" id="audio" value="audio">
+                <label for="video">USB of concert video ($10)</label>
+                <input type="checkbox" name="video" id="video" value="video">
+                <label for="backstage">Pre-show backstage meet-n-greet</label>
+                <input type="checkbox" name="backstage" id="backstage" value="backstage">
+            </div><br>
+
+            <button id="continue">Continue</button>
+        </form>
+    </main>
+</body>
+
+</html>

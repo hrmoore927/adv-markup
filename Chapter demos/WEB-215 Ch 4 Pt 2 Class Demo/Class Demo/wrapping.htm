@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+	$('document').ready(function() {
+        $('li').wrapAll('<div style="background: #f00;margin: 5px;" />')
+        $('p').each(function(){
+            var domain = $(this).text();
+            $(this).wrap('<a href="http://www.'+domain+'.com" />')
+        });
+	});
+	</script>
+	<style type="text/css">
+	.a {
+		color: #000080;
+		}
+	.b {
+		color: #800000;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="a">item 1</li>
+		<li class="a">item 2</li>
+		<li class="b">item 3</li>
+		<li class="b">item 4</li>
+	</ul>
+	<p class="a">Google</p>
+	<p>Yahoo</p>
+	<p class="b">NewEgg</p>
+	<p>Rush</p>
+</body>
+</html>

@@ -1,0 +1,125 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"> 
+	<title>jQuery Gallery</title>
+	<style>
+	h1 {
+		background: #ff0;
+		border: 1px solid #333;
+		padding: 10px;
+	}
+		
+	#content {
+		background: #f66;
+		font: bold 24px arial;
+		margin-top: 1000px;
+		padding: 20px;
+	}
+		
+	#content p {
+		background: #ff6;
+		border: 1px solid #000;
+		font-style: italic;
+		padding: 5px;
+	}
+		
+	#links {
+		font-size: 24px;
+		margin-bottom: 1000px;
+	}
+	</style>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+	$('document').ready(function(){
+
+		$('#p1next').click(function(evt){
+			evt.preventDefault();
+			alert($('#para1').next().prop('tagName') + '\n' + $('#para1').next().text());
+		});
+
+		$('#p1children').click(function(evt){
+			evt.preventDefault();
+			alert($('#para1').children().length);
+		});
+
+		$('#divchildren').click(function(evt){
+			evt.preventDefault();
+			alert($('#content').children().length);
+		});
+
+		$('#divchildren2').click(function(evt){
+			evt.preventDefault();
+			var children = $('#content').children();
+			for(i=0;i<$('#content').children().length;i++){
+			alert($(children[i]).prop('tagName'));
+			}// end for
+		});
+
+		$('#setchildren').click(function(evt){
+			evt.preventDefault();
+			$('#content').children().text('New text');
+		});
+
+		$('#setchildren1').click(function(evt){
+			evt.preventDefault();
+			$('#content').children(':first').text('First child');
+		});
+
+		$('#setchildren2').click(function(evt){
+			evt.preventDefault();
+			$('#content').children(':last').text('Last child');
+		});
+
+		$('#setchildren3').click(function(evt){
+			evt.preventDefault();
+			$('#content').children(':not(:first)').text('These are NOT the first');
+		});
+
+		$('#getchildren').click(function(evt){
+			evt.preventDefault();
+			alert($('#content').children().text());
+		});
+
+		$('#getchildrenFirst').click(function(evt){
+			evt.preventDefault();
+			alert($('#content').children(':first').text());
+		});
+
+	});
+	</script>
+</head>
+<body>
+    <h1 onmouseover="document.getElementById('p1').src = 'tulips.jpg';" onmouseout="document.getElementById('p1').src = 'Penguins.jpg';">Image Loading Simulation</h1>
+	<figure>
+		<img id="p1" src="Penguins.jpg" onmouseover="this.src = 'koala.gif';" onmouseout="this.src = 'Penguins.jpg';">
+		<figcaption>Lag time to download large images</figcaption>
+	</figure>
+	<figure>
+		<img src="Penguins.jpg" onmouseover="this.src = 'koala-progressive.gif';" onmouseout="this.src = 'Penguins.jpg';">
+		<figcaption>Interlaced or progressive rendering</figcaption>
+	</figure>
+
+
+	<div id="content">
+		DIV
+		<h1>This is an H1 tag</h1>
+		<p id="para1">#para1: I am a paragraph child of the div.</p>
+		<p id="para2">#para2: I am another paragraph child of the div - and a sibling of the previous paragraph.</p>
+	</div>
+	<div id="links">
+		<h2>These are 'hints' - not the actual code!</h2>
+		<p><a id="p1next" href="#">$('#para1').next();</a></p>
+		<p><a id="p1children" href="#">$('#para1').children().length;</a></p>
+		<p><a id="divchildren" href="#">$('div').children().length;</a></p>
+		<p><a id="divchildren2" href="#">$('div').children().prop('tagName');</a></p>
+		<p><a id="setchildren" href="#">$('div').children().text('New text');</a></p>
+		<p><a id="setchildren1" href="#">$('div').children(':first').text('First child');</a></p>
+		<p><a id="setchildren2" href="#">$('div').children(':last').text('Last child');</a></p>
+		<p><a id="setchildren3" href="#">$('div').children(':not(:first)').text('These are NOT the first');</a></p>
+		<p><a id="getchildren" href="#">$('div').children().text();</a></p>
+		<p><a id="getchildrenFirst" href="#">$('div').children(':first').text();</a></p>
+	</div>
+	
+</body>
+</html>

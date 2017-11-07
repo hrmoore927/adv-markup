@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+	$('document').ready(function() {
+        $('p:first').after($('p:last'));
+	});
+	</script>
+	<style type="text/css">
+	.a {
+		color: #000080;
+		}
+	.b {
+		color: #800000;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="a">item 1</li>
+		<li class="a">item 2</li>
+		<li class="b">item 3</li>
+		<li class="b">item 4</li>
+	</ul>
+	<p class="a">This is paragraph 1</p>
+	<p>This is paragraph 2</p>
+	<p class="b">This is paragraph 3</p>
+	<p>This is paragraph 4</p>
+</body>
+</html>

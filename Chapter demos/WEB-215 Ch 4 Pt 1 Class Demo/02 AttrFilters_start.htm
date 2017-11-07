@@ -1,0 +1,41 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$('document').ready(function() {
+            $('p:first').css('border', '1px solid #f00');
+		});
+	</script>
+	<style type="text/css">
+	.main {
+		color: #000080;
+		}
+	.sub {
+		color: #800000;
+		}
+	</style>
+</head>
+<body>
+	<h1>Heading 1</h1>
+	<ul id="list1">
+		<li class="main">item 1</li>
+		<li class="main">item 2</li>
+		<li class="sub">item 3</li>
+		<li class="sub">item 4</li>
+	</ul>
+		
+	<h2>Heading 2</h2>
+	<p class="main">This is paragraph 1, class=main</p>
+	<p id="para1">This is paragraph 2, ID=para1</p>
+	<p class="sub">This is paragraph 3, class=sub</p>
+	<p id="para4" lang="en-us">This is paragraph 4, ID=para4</p>
+	<p id="unparalleled">This is paragraph 5, ID=unparalleled</p>
+	<p id="subpar">This is paragraph 6, ID=subpar</p>
+	
+	<h2></h2>
+	<p id="paralegal">This is paragraph 7, ID=paralegal</p>
+</body>
+</html>

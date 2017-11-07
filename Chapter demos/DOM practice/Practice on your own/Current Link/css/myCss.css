@@ -1,0 +1,24 @@
+#mainnav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	}
+	
+#mainnav li {
+	display: inline;
+	margin-right: 20px;
+	}
+	
+#mainnav a {
+	border: 1px solid #333;
+	background: #ff0;
+	padding: 10px;
+	text-decoration: none;
+	color: #600;
+	}
+	
+/* This style will be applied dynamically via JavaScript */
+#mainnav #currentlink {
+	background: #600;
+	color: #ff0;
+	}

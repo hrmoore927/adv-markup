@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Animating an Element</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			$("#right").click(function() {
+				$("#theDiv").animate({ width: "500px" }, 1000);
+			});
+			$("#text").click(function() {
+				$("#theDiv").animate({ fontSize: "24pt" }, 1000);
+			});
+			$("#move").click(function() {
+				$("#theDiv").animate({ left: "500" }, 1000, "linear");
+			});
+            
+            
+            $('#all').click(function(){
+               $('div').animate({
+                   width: "500px",
+                   fontSize: "24px",
+                   left: "500"
+               },2000); 
+            })
+		});
+	</script>
+	<style>
+	div#theDiv {
+		position: relative;
+		width: 250px;
+		height: 180px;
+		margin: 10px;
+		padding: 20px;
+		background: #00f;
+		border: 2px solid #000;
+		cursor: pointer;
+		}
+		
+	p, span {
+		font-size: 18px;
+		}
+		
+	button {
+		margin: 5px;
+		}
+	</style>
+</head>
+<body>
+    <p>Animating an Element</p>
+    <div id="theDiv">Animate Me</div>
+    <button id="right">Grow Right</button>
+    <button id="text">Big Text</button>
+    <button id="move">Move Div</button>
+    <button id="all">Animate All</button>
+</body>
+</html>

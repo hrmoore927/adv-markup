@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Van Halen Vocalists</title>
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link href="css/styles.css" rel="stylesheet">
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/interactions.js"></script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<h1>Van Halen Vocalists</h1>
+		<h2>Drag the correct vocalist to his correct place on the timeline.</h2>
+		<div id="timeline">
+			<div id="year76-85" class="dlr76">
+				<h2>1976-1985</h2>
+			</div>		
+			<div id="year85-96" class="hagar85">
+				<h2>1985-1996</h2>
+			</div>		
+			<div id="year96" class="dlr96">
+				<h2>1996</h2>
+			</div>
+			<div id="year96-99" class="cherone">
+				<h2>1996-1999</h2>
+			</div>		
+			<div id="year03-05" class="hagar05">
+				<h2>2003-2005</h2>
+			</div>
+			<div id="year07-17" class="dlr17">
+				<h2>2007-2017</h2>
+			</div>	
+		</div><!-- end timeline -->
+		<div id="timeline-singers">
+			<figure id="dlr76">
+				<img src="images/dlr76.jpg" alt="David Lee Roth young">
+				<figcaption>A very young David Lee Roth</figcaption>
+			</figure>
+			<figure id="dlr96">
+				<img src="images/dlr96.jpg" alt="David Lee Roth a little older">
+				<figcaption>A slightly older David Lee Roth</figcaption>
+			</figure>
+			<figure id="dlr17">
+				<img src="images/dlr17.jpg" alt="David Lee Roth a lot older">
+				<figcaption>A much older David Lee Roth</figcaption>
+			</figure>
+			<figure id="hagar85">
+				<img src="images/hagar85.jpg" alt="young Sammy Hagar">
+				<figcaption>A young Sammy Hagar, AKA The Red Rocker</figcaption>
+			</figure>	
+			<figure id="hagar05">
+				<img src="images/hagar05.jpg" alt="older Sammy Hagar">
+				<figcaption>An older Sammy Hagar (still The Red Rocker)</figcaption>
+			</figure>	
+			<figure id="cherone">
+				<img src="images/cherone.jpg" alt="Gary Cherone">
+				<figcaption>Gary Cherone. You know. From Extreme.</figcaption>
+			</figure>		
+		</div><!-- end timeline-singers -->
+		<h2 id="sort-header">Now drag the singers in order from best frontman to least best frontman.</h2>
+		<p id="result">Result: (drag to see your result)</p>
+		<ol id="singers-sorted">
+			<li id="david"><img src="images/dlr-jump.jpg" alt="DLR"></li>
+			<li id="sammy"><img src="images/hagar-concert.jpg" alt="DLR"></li>
+			<li id="gary"><img src="images/cherone-concert.jpg" alt="DLR"></li>
+		</ol>
+	</div><!-- end wrapper -->
+</body>
+</html>

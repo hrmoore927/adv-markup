@@ -1,0 +1,51 @@
+#accordion {
+    width: 700px;
+}
+
+#accordion h2 {
+    background-color: #666;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #666;
+    color: #fff;
+    margin: 10px 0 0;
+    padding: 5px;
+}
+
+/* css for open h2 */
+#accordion h2.open {
+    background-color: #fff;
+    border-bottom: none;
+    border-color: #333;
+    border-radius: 5px 5px 0 0;
+    color: #666;
+}
+
+#accordion div {
+    background-color: #aaa;
+    border: 1px solid #333;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 5px 5px 5px #666;
+    font: 14px 'Arial', 'Helvetica', sans-serif;
+    padding: 10px;
+}
+
+.arrow-up {
+    border-bottom: 10px solid #fff;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.arrow-down {
+    border-top: 10px solid #c00;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+    margin-right: 5px;
+}
