@@ -1,0 +1,28 @@
+* {
+	box-sizing: border-box;
+}
+
+ul {
+	cursor: grab;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 450px;
+}
+
+li {
+	float: left;
+	height: 150px;
+	margin: 0;
+	padding: 0;
+	width: 150px;
+}
+
+h1 {
+	padding: 10px;
+}
+
+.placeholder {
+	background-color: #cfc;
+	border: 1px dashed #000;
+}
