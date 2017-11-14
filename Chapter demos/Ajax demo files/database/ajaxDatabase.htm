@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'> 
+	<title>Ajax Database Demo</title>
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/ajaxDB.js"></script>
+</head>
+<body>
+	<h1>Ajax Database Demo</h1>
+	<p>Content from a database</p>
+	<form action="process.php">
+		<label for="name">What's your name:</label> <input type="text" name="name" id="name"><br>
+		What do you want to see?<br>
+		<label for="cartoons">Cartoons</label><input type="radio" name="choice" id="cartoons" value="cartoons" checked="checked"><br>
+		<label for="pets">Pets</label><input type="radio" name="choice" id="pets" value="pets"><br>
+		<label for="both">Both</label><input type="radio" name="choice" id="both" value="both"><br>
+		<input type="submit" value="Ajax me!">
+	</form>
+</body>
+</html>
