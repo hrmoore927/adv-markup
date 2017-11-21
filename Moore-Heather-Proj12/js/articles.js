@@ -38,7 +38,6 @@ function sendData(){
         searchURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
         searchURL += '?api-key=' + api;
         searchURL += '&' + formData;
-        searchURL += 'page=' + page;
         $.getJSON(searchURL, displayResults);
     }); // end anon fcn
 } // end send function
@@ -47,7 +46,8 @@ function displayResults(data){
     $('#resultsHeading').remove();
     $('#resultsList').remove();
     $('#articles').after('<h2 id="resultsHeading"></h2>');
-    $('#resultsHeading').after('<ol id="resultsList"></ol>');
+    $('#resultsHeading').after('<div id="page"></div>');
+    $('#page').after('<ol id="resultsList"></ol>');
     var searchTerms = $('#q').val();
     var beginDate = $('#begin_date_display').val();
     var endDate = $('#end_date_display').val();
@@ -68,18 +68,17 @@ function displayResults(data){
         var articleDetails = '<h3>' + headline + ' ' + publishDate + '</h3>';
         articleDetails += snippet;
         articleDetails += '<br><a href="' + url + '" target="_blank">full article...</a>';
-        var li = '<li>' + articleDetails + '</li>';
+        li = '<li>' + articleDetails + '</li>';
         $('#resultsList').append(li);
     }); // end response anon fcn
-    var currentSearch = $('#articles').serialize();
-    currentSearch = encodeURI(currentSearch);
-    $('#page').pagination({
-        dataSource: currentURL,
-        showPrevious: true,
-        showNext: true,
-        showPageNumbers: true,
-        showNavigator: true
+    $('#page').bootpag({
+        total: hits / 10,
+        page: 1,
+        maxVisible: 10
+    }).on('page', function(event, num){
+        searchURL += 'page=' + num;
+        $('#resultsList').remove();
+        $('#page').after('<ol id="resultsList"></ol>');
+        $('#resultsList').append(li);
     });
-    
-    
 } // end display function
