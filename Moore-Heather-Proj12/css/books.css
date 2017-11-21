@@ -1,0 +1,13 @@
+#bestsellers {
+    border-bottom: 1px dashed #333;
+    padding-bottom: 1em;
+}
+
+#resultsList li {
+    background-color: #aaa;
+    padding: 1em;
+}
+
+#resultsList li:nth-child(odd) {
+    background-color: #ddd;
+}

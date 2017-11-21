@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New York Times Articles</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="css/articles.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/pagination.js"></script>
+    <script src="js/articles.js"></script>
+</head>
+<body>
+    <h1>New York Times Articles Search</h1>
+    <form id="articles">
+        <label for="q">Search terms:</label>
+        <input type="text" name="q" id="q">
+        <label for="begin_date">Dates:</label>
+        <input type="hidden" name="begin_date" id="begin_date" >
+        <input type="text" name="begin_date_display" id="begin_date_display" class="dates">
+        <label for="end_date">through</label>
+        <input type="hidden" name="end_date" id="end_date">
+        <input type="text" name="end_date_display" id="end_date_display" class="dates">
+        <input type="submit" value="Search Articles">
+    </form>
+</body>
+</html>
