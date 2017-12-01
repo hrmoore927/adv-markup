@@ -9,6 +9,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <script src="../js/jquery-3.2.1.min.js"></script>
   <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/jquery.validate.js"></script>
   <script src="../js/customFunctions.js"></script>
   <script src="../js/duckCalls.js"></script>
 </head>
@@ -32,15 +33,15 @@
       <form method="get" action="process_form.html">
         <p>
           <label for="fullname">Name:</label>
-          <input name="fullname" type="text" id="fullname" value="First Last" class="required">
+          <input name="fullname" type="text" id="fullname" value="First Last">
         </p>
         <p>
           <label for="emailaddy">Email address:</label>
-          <input type="text" name="emailaddy" id="emailaddy" class="required">
+          <input type="text" name="emailaddy" id="emailaddy">
         </p>
         <p>
           <label for="sightingdate">Date of duck sighting:</label>
-          <input type="text" name="sightingdate" id="sightingdate" class="required">
+          <input type="text" name="sightingdate" id="sightingdate">
         </p>      
         <p>
           <label for="comments">Comments:</label>
@@ -48,12 +49,12 @@
         </p>
       <p id="formImages">
         Drag the duck into the pond to submit this form.<br>
-        <img src="images/sendform/duck.png" alt="duck" id="formDuck">
-        <img src="images/sendform/cow.png" alt="cow" id="formCow">
-        <img src="images/sendform/rabbit.png" alt="rabbit" id="formRabbit"><br>
-        <img src="images/sendform/mountains.png" alt="mountains" id="formMountains">
-        <img src="images/sendform/pond.png" alt="pond" id="formPond">
-        <img src="images/sendform/space.png" alt="space" id="formSpace">
+        <img src="images/sendform/duck.png" alt="duck" id="formDuck" class="drag">
+        <img src="images/sendform/cow.png" alt="cow" id="formCow" class="drag">
+        <img src="images/sendform/rabbit.png" alt="rabbit" id="formRabbit" class="drag"><br>
+        <img src="images/sendform/mountains.png" alt="mountains" id="formMountains" class="drop">
+        <img src="images/sendform/pond.png" alt="pond" id="formPond" class="drop">
+        <img src="images/sendform/space.png" alt="space" id="formSpace" class="drop">
       </p>
       </form>
     </div>

@@ -141,3 +141,15 @@ label {
 .row-hover {
     background-color: #5f9ea0;
 }
+
+#resultsList li {
+    padding: 10px;
+}
+
+#resultsList li:nth-of-type(odd) {
+    background-color: #d9d9d9;
+}
+
+#resultsList li:nth-of-type(even) {
+    background-color: #adadad;
+}

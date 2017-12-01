@@ -86,7 +86,7 @@ body  {
 
 #fishfun td, #fishfun th {
 	padding: 10px;
-	vertiacl-align: top;
+	vertical-align: top;
 }
 
 .bottomRow {
@@ -138,4 +138,16 @@ input, textarea {
 
 .rowOver {
 	background: #ccc;
+}
+
+#resultsList li {
+    padding: 10px;
+}
+
+#resultsList li:nth-of-type(odd) {
+    background-color: #d9d9d9;
+}
+
+#resultsList li:nth-of-type(even) {
+    background-color: #adadad;
 }
