@@ -12,36 +12,38 @@ function currentPage(highlightClass){
 
 function accordion(accordionFAQ){
     $(accordionFAQ).accordion({
-        collapsable: true,
-        active: false, // ask about this
-        heightStyle: 'content'
+        collapsible: true, 
+        heightStyle: 'content',
+        active: false
     });
 }
 
 function tableStripe(oddRow, evenRow, rowHover){
     $('tr:odd').addClass(oddRow);
     $('tr:even').addClass(evenRow);
-    $('tr').hover(function(){
+    $('tr').not(':first').hover(function(){
         $(this).addClass(rowHover);
     },
     function(){
         $(this).removeClass(rowHover);
-    }); // fix the first row
+    }); 
 }
 
 function links(){
+    
     var arrSites = document.getElementsByTagName('a');
     for (var i=0; i < arrSites.length; i++) {
         var link = arrSites[i].getAttribute('href');
         var external = new RegExp('http');
         if(link.match(external)) {
-        arrSites[i].setAttribute('target', '_blank'); 
+            arrSites[i].setAttribute('target', '_blank');
+            $('tr').click(function() {
+                var clickLink = $(this).find('a').attr('href');
+                window.open(clickLink);
+            });
         }
     }
     $('td').css('cursor', 'pointer');
-    var clickLink = $('td a').attr('href');
-    var year = $('td:first-of-type').text(); // come back to this
-    $('td:first-of-type').append('<a href="' + clickLink + '"></a>');
 }
 
 function loadImages(galleryLinks){
@@ -55,7 +57,7 @@ function loadImages(galleryLinks){
 
 function displayFirst(galleryLinks, firstCaption, galleryName){
     var firstImagePath = $(galleryLinks).attr('href');
-    var caption = $(firstCaption).attr('title'); // ask about title
+    var caption = $(galleryLinks).attr('title');
     var firstImage = $('<figure id="galleryBig"><img src="' + firstImagePath + '"><figcaption>' + caption + '</figcaption></figure>');
     $(galleryName).after(firstImage);
 }
@@ -65,7 +67,7 @@ function gallery(galleryLinks){
 		evt.preventDefault();
 		oldImage = $('#galleryBig').children(':first');
 		var imgPath = $(this).attr('href');
-        var nextCaption = $(this).children('img').attr('title');
+        var nextCaption = $(this).attr('title');
 		var newImage = $('<img src="' + imgPath + '">');
         var figCap = $('figcaption').text(nextCaption);
 		newImage.hide();
@@ -77,11 +79,7 @@ function gallery(galleryLinks){
 	}); //end anonymous fcn
 } //end gallery
 
-function autoFocus(fieldToFocus) {
-    $(fieldToFocus).focus();
-}
-
-function autoClear(fieldToClear, defaultString) {
+function autoClear(fieldToClear, defaultString, formName) {
     $(fieldToClear).val(defaultString);
     $(fieldToClear).focus(function () {
         if ($(this).val() == defaultString) {
@@ -95,26 +93,30 @@ function autoClear(fieldToClear, defaultString) {
     });
 }
 
-//function validateForm(formName) {
-//    $(formName).validate({
-//        rules: {
-//            fullname: 'required',
-//            emailaddy: {
-//                required: true,
-//                email: true
-//            },
-//            sightingdate: 'required'
-//        }
-//    });
-//}
-
-//function submitForm(formName) {
-//    $(':submit').click(function (e) {
-//        if ($(formName).valid() == false) {
-//            e.preventDefault();
-//        }
-//    });
-//}
+function validateForm(formName, element, value, defaultValue){
+    jQuery.validator.addMethod('notEqual', function(value, element, param) {
+        return this.optional(element) || value != param;
+    }, 'Please enter a valid name.');
+    $(formName).validate({
+        rules: {
+            required: {
+                required: true
+            },
+            fullname: {
+                required: true,
+                notEqual: 'First Last'
+            },
+            fname: {
+                required: true,
+                notEqual: 'First'
+            },
+            lname: {
+                required: true,
+                notEqual: 'Last'
+            }
+        }
+    });
+}
 
 function calendar(date){
     $(date).datepicker({
@@ -128,31 +130,29 @@ function makeDraggable(draggableItems){
         zIndex: 100,
         opacity: .75,
         revert: true
-    }); // end draggable options
-} // end function
+    }); 
+} 
 
 function makeDroppable(dropZones, correctDrag, correctDrop, formName, dropClass){
     $(dropZones).droppable({
         hoverClass: dropClass,
         tolerance: 'intersect',
         drop: function(event, ui){
-            // $(this) = the droppable element
-            // ui.helper = the item you dragged and just dropped
             var dropId = $(this).attr('id');
             var dragId = ui.helper.attr('id');
-            if (dropId == correctDrop && dragId == correctDrag) {
-                $(this).css('background-color', '#0f0');
-                $(this).droppable({disabled: true});
-                ui.helper.draggable({disabled: true});
-                
-            } else {
+            if ($(formName).valid() == true) {
+                if (dropId == correctDrop && dragId == correctDrag) {
+                    $(this).css('background-color', '#0f0');
+                    $(this).droppable({disabled: true});
+                    ui.helper.draggable({disabled: true});
+                    $(formName).submit();
+                } else {
                 $(this).css('background-color', '#f00');
-            } // end if-else
+                } // end if-else
+            } // end form valid
         } // end drop anon fcn
     }); // end droppable options
 } // end function
-
-// Come back to the submit
 
 function sendData(searchTerm){
     var api = 'e10977d8e31b4ecd8643cb640554d548';
@@ -173,9 +173,15 @@ function displayResults(data, divContainer, numResults){
         var date = resultsValue.opening_date;
         var url = resultsValue.link.url;
         var detailString = title;
-        detailString += '<br>Rating: ' + rating;
-        detailString += '<br>Opening Date: ' + date;
-        detailString += '<br>' + summary;
+        if (rating != 'Null' && rating != ''){
+            detailString += '<br>Rating: ' + rating;
+        }
+        if (date != 'null' && date != '0000-00-00' && date != ''){
+            detailString += '<br>Opening Date: ' + date;
+        }
+        if (summary != 'null' && summary != ''){
+            detailString += '<br>' + summary;
+        }
         detailString += '<br><a href="' + url + '" target="_blank">Full review</a>';
         var li = '<li>' + detailString + '</li>';
         $('#resultsList').append(li);

@@ -151,3 +151,7 @@ input, textarea {
 #resultsList li:nth-of-type(even) {
     background-color: #adadad;
 }
+
+td:first-of-type {
+    text-decoration: underline;
+}

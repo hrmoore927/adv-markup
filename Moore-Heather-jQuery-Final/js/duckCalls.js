@@ -6,11 +6,9 @@ $('document').ready(function(){
     loadImages('#galleryThumbs a');
     displayFirst('#galleryThumbs a', '#galleryThumbs img:first', '#galleryThumbs');
     gallery('#galleryThumbs a');
-//    autoFocus('#fullname');
     autoClear('#fullname', 'First Last');
     autoClear('#comments', 'Comments, questions, or interesting story about rubber ducks');
-//    validateForm('form');
-//    submitForm('form');
+    validateForm('form', 'input', 'value', 'First Last');
     calendar('#sightingdate');
     makeDraggable('.drag');
     makeDroppable('.drop', 'formDuck', 'formPond', 'form', 'dropHighlight');

@@ -153,3 +153,11 @@ label {
 #resultsList li:nth-of-type(even) {
     background-color: #adadad;
 }
+
+td:first-of-type {
+    text-decoration: underline;
+}
+
+ol {
+    margin-bottom: 0;
+}
