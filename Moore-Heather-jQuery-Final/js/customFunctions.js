@@ -30,7 +30,6 @@ function tableStripe(oddRow, evenRow, rowHover){
 }
 
 function links(){
-    
     var arrSites = document.getElementsByTagName('a');
     for (var i=0; i < arrSites.length; i++) {
         var link = arrSites[i].getAttribute('href');
@@ -93,7 +92,7 @@ function autoClear(fieldToClear, defaultString, formName) {
     });
 }
 
-function validateForm(formName, element, value, defaultValue){
+function validateForm(formName, element, value){
     jQuery.validator.addMethod('notEqual', function(value, element, param) {
         return this.optional(element) || value != param;
     }, 'Please enter a valid name.');
@@ -113,6 +112,12 @@ function validateForm(formName, element, value, defaultValue){
             lname: {
                 required: true,
                 notEqual: 'Last'
+            },
+            emailaddy: {
+                email: true
+            },
+            email: {
+                email: true
             }
         }
     });
@@ -120,7 +125,9 @@ function validateForm(formName, element, value, defaultValue){
 
 function calendar(date){
     $(date).datepicker({
-       maxDate: 0
+        maxDate: 0,
+        changeMonth: true,
+        changeYear: true
     });
 }
 
@@ -128,7 +135,7 @@ function makeDraggable(draggableItems){
     $(draggableItems).draggable({
         cursor: 'move',
         zIndex: 100,
-        opacity: .75,
+        opacity: .90,
         revert: true
     }); 
 } 
@@ -176,7 +183,7 @@ function displayResults(data, divContainer, numResults){
         if (rating != 'Null' && rating != ''){
             detailString += '<br>Rating: ' + rating;
         }
-        if (date != 'null' && date != '0000-00-00' && date != ''){
+        if (date != 'null' && date != '0000-00-00' && date != '' && date != 'Null'){
             detailString += '<br>Opening Date: ' + date;
         }
         if (summary != 'null' && summary != ''){

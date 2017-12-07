@@ -8,10 +8,10 @@ $('document').ready(function(){
     gallery('#galleryThumbs a');
     autoClear('#fullname', 'First Last');
     autoClear('#comments', 'Comments, questions, or interesting story about rubber ducks');
-    validateForm('form', 'input', 'value', 'First Last');
+    validateForm('form', 'input', 'value');
     calendar('#sightingdate');
     makeDraggable('.drag');
     makeDroppable('.drop', 'formDuck', 'formPond', 'form', 'dropHighlight');
     sendData('duck');
-    displayResults(searchURL, '#contentMedia', '12');
+    displayResults(searchURL, '.media', '12');
 });
